@@ -41,10 +41,12 @@ import java.util.Scanner;
  *
  */
 public class StoreCredit {
-	private static final String SMALL_IN = "./testcases/A-small-practice.in";
-	private static final String BIG_IN = "./testcases/A-large-practice.in";
-	private static final String SMALL_OUT = "./testcases/A-small-practice.out";
-	private static final String BIG_OUT = "./testcases/A-large-practice.out";
+	// private static final String SMALL_IN = "./testcases/A-small-practice.in";
+	// private static final String LARGE_IN = "./testcases/A-large-practice.in";
+	// private static final String SMALL_OUT =
+	// "./testcases/A-small-practice.out";
+	// private static final String LARGE_OUT =
+	// "./testcases/A-large-practice.out";
 
 	private static int[] twoSumIndex(int[] arr, int target) {
 		// return 1 based indices of the 2 number
@@ -79,7 +81,7 @@ public class StoreCredit {
 
 	public static void main(String[] args) {
 		try {
-			FileReader fr = new FileReader(BIG_IN);
+			FileReader fr = new FileReader(args[0]);
 			Scanner in = new Scanner(new BufferedReader(fr));
 			int t = in.nextInt();
 			for (int i = 0; i < t; i++) {
@@ -93,6 +95,7 @@ public class StoreCredit {
 				int[] ret = twoSumIndex(price, c);
 				System.out.println("Case #" + (i + 1) + ": " + ret[0] + " "
 						+ ret[1]);
+				in.close();
 			}
 		} catch (FileNotFoundException ex) {
 
